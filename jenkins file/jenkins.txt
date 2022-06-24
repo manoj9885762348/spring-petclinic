@@ -1,1 +1,14 @@
-
+node('jdk11-mvn3.6.3') {
+      def buildNumber = BUILD_NUMBER
+    stage('git') 
+        git 'https://github.com/manoj9885762348/spring-petclinic.git'
+    }
+   stage("Maven Clean Package") {
+        
+      def mavenHome= tool name: "Maven",type:"maven" 
+      
+      sh "${mavenHome}/bin/mvn clean package"
+    }
+    stage('archive') {
+        archive 'target/*.jar'
+    }
