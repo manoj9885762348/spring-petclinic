@@ -1,4 +1,4 @@
-node('jdk11-mvn3.6.3') {
+node {
     stage('git') 
         git 'https://github.com/manoj9885762348/spring-petclinic.git'
     }
