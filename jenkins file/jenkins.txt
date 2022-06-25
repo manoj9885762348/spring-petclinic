@@ -1,5 +1,4 @@
 node('jdk11-mvn3.6.3') {
-      def buildNumber = BUILD_NUMBER
     stage('git') 
         git 'https://github.com/manoj9885762348/spring-petclinic.git'
     }
